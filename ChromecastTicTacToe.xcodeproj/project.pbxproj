@@ -22,7 +22,12 @@
 		278E46F316E9664600A89D73 /* TicTacToeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 278E46F216E9664600A89D73 /* TicTacToeView.m */; };
 		278E472216E9717400A89D73 /* TicTacToeBoardState.m in Sources */ = {isa = PBXBuildFile; fileRef = 278E472116E9717400A89D73 /* TicTacToeBoardState.m */; };
 		278E472516EA99FC00A89D73 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278E472416EA99FC00A89D73 /* SettingsViewController.m */; };
-		68102B67171F856A00463902 /* GCKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68102B66171F856A00463902 /* GCKFramework.framework */; };
+		CA515236180365C70065A26C /* GCKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA515235180365C70065A26C /* GCKFramework.framework */; };
+		CA51523B18036B4B0065A26C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA51523718036B4B0065A26C /* Icon@2x.png */; };
+		CA51523C18036B4B0065A26C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA51523818036B4B0065A26C /* Icon.png */; };
+		CA51523D18036B4B0065A26C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA51523918036B4B0065A26C /* Default@2x.png */; };
+		CA51523E18036B4B0065A26C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA51523A18036B4B0065A26C /* Default-568h@2x.png */; };
+		CA51524018036B730065A26C /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = CA51523F18036B730065A26C /* Icon-120.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +58,12 @@
 		278E472316EA99FC00A89D73 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		278E472416EA99FC00A89D73 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		68102B66171F856A00463902 /* GCKFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GCKFramework.framework; sourceTree = "<group>"; };
+		CA515235180365C70065A26C /* GCKFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GCKFramework.framework; path = ../GCKFramework.framework; sourceTree = "<group>"; };
+		CA51523718036B4B0065A26C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		CA51523818036B4B0065A26C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		CA51523918036B4B0065A26C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CA51523A18036B4B0065A26C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CA51523F18036B730065A26C /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68102B67171F856A00463902 /* GCKFramework.framework in Frameworks */,
+				CA515236180365C70065A26C /* GCKFramework.framework in Frameworks */,
 				275A6B1B16E92C23009F393F /* CFNetwork.framework in Frameworks */,
 				275A6B1916E92C1A009F393F /* Security.framework in Frameworks */,
 				277D8E5216E81E1F0072EF51 /* UIKit.framework in Frameworks */,
@@ -93,6 +104,7 @@
 		277D8E5016E81E1F0072EF51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA515235180365C70065A26C /* GCKFramework.framework */,
 				68102B66171F856A00463902 /* GCKFramework.framework */,
 				275A6B1A16E92C23009F393F /* CFNetwork.framework */,
 				277D8E5516E81E1F0072EF51 /* CoreGraphics.framework */,
@@ -128,6 +140,11 @@
 		277D8E5816E81E1F0072EF51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CA51523F18036B730065A26C /* Icon-120.png */,
+				CA51523718036B4B0065A26C /* Icon@2x.png */,
+				CA51523818036B4B0065A26C /* Icon.png */,
+				CA51523918036B4B0065A26C /* Default@2x.png */,
+				CA51523A18036B4B0065A26C /* Default-568h@2x.png */,
 				277D8E5916E81E1F0072EF51 /* ChromecastTicTacToe-Info.plist */,
 				277D8E5F16E81E1F0072EF51 /* ChromecastTicTacToe-Prefix.pch */,
 				277D8E6316E81E1F0072EF51 /* Default.png */,
@@ -188,7 +205,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA51524018036B730065A26C /* Icon-120.png in Resources */,
+				CA51523E18036B4B0065A26C /* Default-568h@2x.png in Resources */,
+				CA51523C18036B4B0065A26C /* Icon.png in Resources */,
+				CA51523D18036B4B0065A26C /* Default@2x.png in Resources */,
 				277D8E6416E81E1F0072EF51 /* Default.png in Resources */,
+				CA51523B18036B4B0065A26C /* Icon@2x.png in Resources */,
 				277D8E6B16E81E1F0072EF51 /* MainStoryboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,9 +350,11 @@
 		277D8E7816E81E1F0072EF51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/cmoutran/Documents/iPhoneDEV,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChromecastTicTacToe/ChromecastTicTacToe-Prefix.pch";
@@ -348,7 +372,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/cmoutran/Documents/iPhoneDEV,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChromecastTicTacToe/ChromecastTicTacToe-Prefix.pch";
