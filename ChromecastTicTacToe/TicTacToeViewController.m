@@ -74,7 +74,7 @@ static const NSInteger kTagPlayAgain = 2;
   _gameStatusLabel.font = [UIFont systemFontOfSize:21];
   _gameStatusLabel.translatesAutoresizingMaskIntoConstraints = NO;
     _gameStatusLabel.textAlignment = NSTextAlignmentCenter;
-
+    _gameStatusLabel.textColor = [UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000];
   [self.view addSubview:_gameStatusLabel];    
     
   NSDictionary *viewsDictionary =

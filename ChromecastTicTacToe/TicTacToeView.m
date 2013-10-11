@@ -122,8 +122,9 @@ static inline CGFloat ColumnWidthFromRect(CGRect rect) {
 // Draws a square grid with evenly spaced lines such that there are
 // kTicTacToeBoardSize rows and columns of squares.
 - (void)drawGridInRect:(CGRect)rect context:(CGContextRef)context {
-  CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
-  CGContextSetLineWidth(context, 2.0);
+  //CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+  CGContextSetStrokeColorWithColor(context,[UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000].CGColor);
+  CGContextSetLineWidth(context, 4.0);
   CGContextBeginPath(context);
 
   // Row dividers.
@@ -152,8 +153,10 @@ static inline CGFloat ColumnWidthFromRect(CGRect rect) {
   CGRect xRect = [self rectForSquareInRect:rect atRow:row column:column];
   xRect = CGRectInset(xRect, 10, 10);
 
-  CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
-  CGContextSetLineWidth(context, 1.0);
+//  CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+//  CGContextSetLineWidth(context, 1.0);
+  CGContextSetStrokeColorWithColor(context,[UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000].CGColor);
+  CGContextSetLineWidth(context, 2.0);
   CGContextBeginPath(context);
 
   CGContextMoveToPoint(context, CGRectGetMinX(xRect), CGRectGetMinY(xRect));
@@ -172,8 +175,9 @@ static inline CGFloat ColumnWidthFromRect(CGRect rect) {
   CGRect oRect = [self rectForSquareInRect:rect atRow:row column:column];
   oRect = CGRectInset(oRect, 10, 10);
 
-  CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
-  CGContextSetLineWidth(context, 1.0);
+  CGContextSetStrokeColorWithColor(context,[UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000].CGColor);
+//  CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+  CGContextSetLineWidth(context, 2.0);
   CGContextBeginPath(context);
 
   CGContextAddEllipseInRect(context, oRect);
