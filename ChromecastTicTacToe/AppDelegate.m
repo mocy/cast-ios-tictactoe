@@ -28,10 +28,26 @@ static NSString *const kUserDefaultsKeyUserName = @"kUserDefaultsKeyUserName";
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  self.context = [[GCKContext alloc] initWithUserAgent:@"TicTacToe"];
-  self.deviceManager = [[GCKDeviceManager alloc] initWithContext:self.context];
+    
+    
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+    
+        // Only valid on iOS 7+
+        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000]];
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        
+        
+        // Change the font style of the title
+         [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+         [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+        
+         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    }
+    
+    self.context = [[GCKContext alloc] initWithUserAgent:@"TicTacToe"];
+    self.deviceManager = [[GCKDeviceManager alloc] initWithContext:self.context];
 
-  return YES;
+    return YES;
 }
 
 - (NSString *)userName {

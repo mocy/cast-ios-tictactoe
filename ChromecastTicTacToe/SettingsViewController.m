@@ -31,20 +31,6 @@
   [self.nameTextField becomeFirstResponder];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:animated];
-
-  if ([self.nameTextField.text length] == 0) {
-    NSString *message = NSLocalizedString(@"Set your player name to play Tic-Tac-Toe.", nil);
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:nil
-                                          otherButtonTitles:NSLocalizedString(@"OK", nil), nil];
-    [alert show];
-  }
-}
-
 - (IBAction)save:(id)sender {
   [self save];
 }
@@ -52,7 +38,7 @@
 - (BOOL)save {
   NSString *userName = self.nameTextField.text;
   if ([userName length] == 0) {
-    NSString *message = NSLocalizedString(@"You must enter a username.", nil);
+    NSString *message = NSLocalizedString(@"You must enter a player name", nil);
     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
                                                          message:message
                                                         delegate:nil
@@ -77,5 +63,10 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
   return [self save];
 }
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 
 @end

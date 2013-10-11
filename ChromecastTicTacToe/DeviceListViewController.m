@@ -37,6 +37,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+
   _devices = [appDelegate.deviceManager.devices mutableCopy];
   [appDelegate.deviceManager addListener:self];
   [appDelegate.deviceManager startScan];
@@ -73,20 +74,40 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
+    
+    if ([_devices count] == 0) {
+        return 1;
+    }
+    
   return (NSInteger)[_devices count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString *cellIdentifier = @"DeviceCell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if ([_devices count] == 0) {
+        UITableViewCell *cell = [[UITableViewCell alloc] init];
+        cell.textLabel.text = @"No chromecast detected";
+        cell.selectionStyle =UITableViewCellSelectionStyleNone;
+        return cell;
+    } else {
+        static NSString *cellIdentifier = @"DeviceCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        
+        // Configure the cell.
+        const GCKDevice *device = [_devices objectAtIndex:(NSUInteger)indexPath.row];
+        cell.textLabel.text = device.friendlyName;
+        cell.detailTextLabel.text = device.ipAddress;
+        
+        return cell;
+    }
+}
 
-  // Configure the cell.
-  const GCKDevice *device = [_devices objectAtIndex:(NSUInteger)indexPath.row];
-  cell.textLabel.text = device.friendlyName;
-  cell.detailTextLabel.text = device.ipAddress;
 
-  return cell;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    if(section == 0)
+        return @"Select Chromecast";
 }
 
 #pragma mark - GCKDeviceManagerListener

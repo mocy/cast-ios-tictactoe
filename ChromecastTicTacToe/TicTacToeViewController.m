@@ -71,10 +71,12 @@ static const NSInteger kTagPlayAgain = 2;
   [self.view addSubview:_ticTacToeView];
 
   _gameStatusLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-  _gameStatusLabel.font = [UIFont systemFontOfSize:17];
+  _gameStatusLabel.font = [UIFont systemFontOfSize:21];
   _gameStatusLabel.translatesAutoresizingMaskIntoConstraints = NO;
-  [self.view addSubview:_gameStatusLabel];
+    _gameStatusLabel.textAlignment = NSTextAlignmentCenter;
 
+  [self.view addSubview:_gameStatusLabel];    
+    
   NSDictionary *viewsDictionary =
       NSDictionaryOfVariableBindings(_ticTacToeView, _gameStatusLabel);
   NSMutableArray *constraints = [[NSMutableArray alloc] initWithCapacity:2];
@@ -90,7 +92,7 @@ static const NSInteger kTagPlayAgain = 2;
                                                 views:viewsDictionary]];
   [constraints addObjectsFromArray:
       [NSLayoutConstraint constraintsWithVisualFormat:
-          @"V:|-[_ticTacToeView(300)]-[_gameStatusLabel]"
+          @"V:|-[_ticTacToeView(300)]-(20)-[_gameStatusLabel]"
                                               options:0
                                               metrics:nil
                                                 views:viewsDictionary]];
