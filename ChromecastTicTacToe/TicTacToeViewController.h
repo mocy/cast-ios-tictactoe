@@ -18,6 +18,7 @@
 @class GCKApplicationSession;
 @class TicTacToeBoardState;
 @class TicTacToeMessageStream;
+@class TicTacToeView;
 
 // A view controller which connects to and joins a Tic-Tac-Toe game instance on
 // a Cast device, displays the game board, and allows the user to play the game
@@ -27,6 +28,8 @@
 // containing only an empty UIView.
 @interface TicTacToeViewController : UIViewController
 
+@property(nonatomic, strong) IBOutlet TicTacToeView *_ticTacToeView;
+@property(nonatomic, strong) IBOutlet UILabel *_gameStatusLabel;
 @property(nonatomic, strong) GCKDevice *device;
 
 @end

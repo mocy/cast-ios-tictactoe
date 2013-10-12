@@ -38,8 +38,8 @@ static const NSInteger kTagPlayAgain = 2;
                                        TicTacToeViewDelegate,
                                        UIAlertViewDelegate> {
   // Views.
-  TicTacToeView *_ticTacToeView;
-  UILabel *_gameStatusLabel;
+//  TicTacToeView *_ticTacToeView;
+//  UILabel *_gameStatusLabel;
 
   // Game state.
   BOOL _isXsTurn;
@@ -65,11 +65,12 @@ static const NSInteger kTagPlayAgain = 2;
 - (void)awakeFromNib {
   _isGameInProgress = NO;
 
+    /*
   _ticTacToeView = [[TicTacToeView alloc] initWithFrame:CGRectZero];
   _ticTacToeView.translatesAutoresizingMaskIntoConstraints = NO;
   _ticTacToeView.delegate = self;
   [self.view addSubview:_ticTacToeView];
-
+   
   _gameStatusLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   _gameStatusLabel.font = [UIFont systemFontOfSize:21];
   _gameStatusLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -100,11 +101,15 @@ static const NSInteger kTagPlayAgain = 2;
 
   _boardState = [[TicTacToeBoardState alloc] init];
   _ticTacToeView.board = _boardState;
+   */
 }
 
 // Start the remote application session when the view appears.
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
+  self._ticTacToeView.delegate = self;
+  _boardState = [[TicTacToeBoardState alloc] init];
+  self._ticTacToeView.board = _boardState;
   [self startSession];
 }
 
@@ -216,10 +221,10 @@ static const NSInteger kTagPlayAgain = 2;
     case kTagPlayAgain:
       if (buttonIndex == 1) {
         [_messageStream joinGameWithName:[self currentUserName]];
-        _gameStatusLabel.text = NSLocalizedString(@"Waiting for opponent\u2026",
+        self._gameStatusLabel.text = NSLocalizedString(@"Waiting for opponent\u2026",
                                                   nil);
         [self.boardState clear];
-        [_ticTacToeView showWinningStrikethroughOfType:kTicTacToeWinTypeNone
+        [self._ticTacToeView showWinningStrikethroughOfType:kTicTacToeWinTypeNone
                                                atIndex:0];
       } else {
         [self.navigationController popViewControllerAnimated:YES];
@@ -262,7 +267,7 @@ static const NSInteger kTagPlayAgain = 2;
     NSLog(@"Couldn't attachMessageStream.");
   }
 
-  _gameStatusLabel.text = NSLocalizedString(@"Waiting for opponent\u2026", nil);
+  self._gameStatusLabel.text = NSLocalizedString(@"Waiting for opponent\u2026", nil);
 }
 
 // Show an error indicating that the game could not be started.
@@ -302,9 +307,9 @@ static const NSInteger kTagPlayAgain = 2;
 
   [self.boardState clear];
   if (player == kPlayerX) {
-    _gameStatusLabel.text = NSLocalizedString(@"Joined game as X", nil);
+    self._gameStatusLabel.text = NSLocalizedString(@"Joined game as X", nil);
   } else {
-    _gameStatusLabel.text = NSLocalizedString(@"Joined game as O", nil);
+    self._gameStatusLabel.text = NSLocalizedString(@"Joined game as O", nil);
   }
 }
 
@@ -331,7 +336,7 @@ static const NSInteger kTagPlayAgain = 2;
                                    : kTicTacToeSquareStateO);
   _isXsTurn = !(player == kPlayerX);
   [self.boardState setState:newState forSquareAtRow:(NSUInteger)row column:(NSUInteger)column];
-  [_ticTacToeView setNeedsDisplay];
+  [self._ticTacToeView setNeedsDisplay];
 }
 
 // Update the game board to show the winning strikethrough if there is a winner,
@@ -347,7 +352,7 @@ static const NSInteger kTagPlayAgain = 2;
       [[self class] decodeWinningLocationFrom:winningLocation
                                     toWinType:&winType
                                         index:&index];
-      [_ticTacToeView showWinningStrikethroughOfType:winType
+      [self._ticTacToeView showWinningStrikethroughOfType:winType
                                              atIndex:(NSUInteger)index];
       NSString *message;
       if (result == kResultYouWon) {
@@ -356,14 +361,14 @@ static const NSInteger kTagPlayAgain = 2;
         message = NSLocalizedString(@"You lost! Play again?", nil);
       }
       [self showGameOverMessage:message];
-      _gameStatusLabel.text = @"";
+      self._gameStatusLabel.text = @"";
       break;
     }
 
     case kResultDraw: {
       NSString *message = NSLocalizedString(@"Nobody wins, again.", nil);
       [self showGameOverMessage:message];
-      _gameStatusLabel.text = @"";
+      self._gameStatusLabel.text = @"";
       break;
     }
 

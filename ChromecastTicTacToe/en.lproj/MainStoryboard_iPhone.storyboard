@@ -141,9 +141,39 @@
                     <view key="view" contentMode="scaleToFill" id="22">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yL-bO-cLY" customClass="TicTacToeView">
+                                <rect key="frame" x="10" y="44" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.75720208883285522" green="0.86235803365707397" blue="0.71826428174972534" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ONu-40-3bv"/>
+                                    <constraint firstAttribute="height" constant="300" id="du4-rt-Smz"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="New Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyG-Bu-Q2P">
+                                <rect key="frame" x="10" y="352" width="300" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="bMD-Nf-T2J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.45098039220000002" green="0.75294117650000003" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8yL-bO-cLY" firstAttribute="top" secondItem="22" secondAttribute="top" constant="44" id="O3s-iR-aGD"/>
+                            <constraint firstAttribute="centerX" secondItem="8yL-bO-cLY" secondAttribute="centerX" id="ohN-cE-hVt"/>
+                            <constraint firstAttribute="centerX" secondItem="VyG-Bu-Q2P" secondAttribute="centerX" id="v26-0Y-8vm"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tic-Tac-Toe" id="26"/>
+                    <connections>
+                        <outlet property="_gameStatusLabel" destination="VyG-Bu-Q2P" id="Dsi-MP-9Bk"/>
+                        <outlet property="_ticTacToeView" destination="8yL-bO-cLY" id="V3b-rz-umh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
