@@ -108,6 +108,9 @@
     
     if(section == 0)
         return @"Select Chromecast";
+    else {
+        return nil;
+    }
 }
 
 #pragma mark - GCKDeviceManagerListener

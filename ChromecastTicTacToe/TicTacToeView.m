@@ -156,7 +156,7 @@ static inline CGFloat ColumnWidthFromRect(CGRect rect) {
 //  CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
 //  CGContextSetLineWidth(context, 1.0);
   CGContextSetStrokeColorWithColor(context,[UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000].CGColor);
-  CGContextSetLineWidth(context, 2.0);
+  CGContextSetLineWidth(context, 4.0);
   CGContextBeginPath(context);
 
   CGContextMoveToPoint(context, CGRectGetMinX(xRect), CGRectGetMinY(xRect));
@@ -177,7 +177,7 @@ static inline CGFloat ColumnWidthFromRect(CGRect rect) {
 
   CGContextSetStrokeColorWithColor(context,[UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000].CGColor);
 //  CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
-  CGContextSetLineWidth(context, 2.0);
+  CGContextSetLineWidth(context, 4.0);
   CGContextBeginPath(context);
 
   CGContextAddEllipseInRect(context, oRect);

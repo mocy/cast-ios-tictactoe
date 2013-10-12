@@ -131,8 +131,11 @@ static const NSInteger kTagPlayAgain = 2;
   [_messageStream leaveGame];
   [_session endSession];
   _session = nil;
+  [_channel detachAllMessageStreams];
+  [_channel disconnect];
   _channel = nil;
-  _messageStream = nil;
+    // TODO: fix the zombie ref
+//  _messageStream = nil;
 }
 
 - (BOOL)isPlayersTurn {

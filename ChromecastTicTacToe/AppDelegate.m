@@ -33,7 +33,7 @@ static NSString *const kUserDefaultsKeyUserName = @"kUserDefaultsKeyUserName";
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
     
         // Only valid on iOS 7+
-        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000]];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.451f green:0.753f blue:0.341f alpha:1.000f]];
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
         
         
