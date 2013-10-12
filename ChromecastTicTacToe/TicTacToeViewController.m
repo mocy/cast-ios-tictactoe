@@ -64,44 +64,6 @@ static const NSInteger kTagPlayAgain = 2;
 // provided in the nib.
 - (void)awakeFromNib {
   _isGameInProgress = NO;
-
-    /*
-  _ticTacToeView = [[TicTacToeView alloc] initWithFrame:CGRectZero];
-  _ticTacToeView.translatesAutoresizingMaskIntoConstraints = NO;
-  _ticTacToeView.delegate = self;
-  [self.view addSubview:_ticTacToeView];
-   
-  _gameStatusLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-  _gameStatusLabel.font = [UIFont systemFontOfSize:21];
-  _gameStatusLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    _gameStatusLabel.textAlignment = NSTextAlignmentCenter;
-    _gameStatusLabel.textColor = [UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000];
-  [self.view addSubview:_gameStatusLabel];    
-    
-  NSDictionary *viewsDictionary =
-      NSDictionaryOfVariableBindings(_ticTacToeView, _gameStatusLabel);
-  NSMutableArray *constraints = [[NSMutableArray alloc] initWithCapacity:2];
-  [constraints addObjectsFromArray:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"|-[_ticTacToeView(300)]-|"
-                                             options:0
-                                             metrics:nil
-                                               views:viewsDictionary]];
-  [constraints addObjectsFromArray:
-      [NSLayoutConstraint constraintsWithVisualFormat:@"|-[_gameStatusLabel(300)]-|"
-                                              options:0
-                                              metrics:nil
-                                                views:viewsDictionary]];
-  [constraints addObjectsFromArray:
-      [NSLayoutConstraint constraintsWithVisualFormat:
-          @"V:|-[_ticTacToeView(300)]-(20)-[_gameStatusLabel]"
-                                              options:0
-                                              metrics:nil
-                                                views:viewsDictionary]];
-  [self.view addConstraints:constraints];
-
-  _boardState = [[TicTacToeBoardState alloc] init];
-  _ticTacToeView.board = _boardState;
-   */
 }
 
 // Start the remote application session when the view appears.

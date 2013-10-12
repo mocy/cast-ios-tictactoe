@@ -76,8 +76,8 @@ static inline CGFloat ColumnWidthFromRect(CGRect rect) {
 #pragma mark - Drawing
 
 - (void)drawRect:(CGRect)rect {
-  [[UIColor whiteColor] setFill];
-  UIRectFill(rect);
+//  [[UIColor whiteColor] setFill];
+//  UIRectFill(rect);
 
   // The play area is square, so we draw in the largest centered square
   // possible in the given rect.
@@ -124,7 +124,7 @@ static inline CGFloat ColumnWidthFromRect(CGRect rect) {
 - (void)drawGridInRect:(CGRect)rect context:(CGContextRef)context {
   //CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
   CGContextSetStrokeColorWithColor(context,[UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000].CGColor);
-  CGContextSetLineWidth(context, 4.0);
+  CGContextSetLineWidth(context, 8.0);
   CGContextBeginPath(context);
 
   // Row dividers.
@@ -151,12 +151,12 @@ static inline CGFloat ColumnWidthFromRect(CGRect rect) {
              column:(NSUInteger)column
             context:(CGContextRef)context {
   CGRect xRect = [self rectForSquareInRect:rect atRow:row column:column];
-  xRect = CGRectInset(xRect, 10, 10);
+  xRect = CGRectInset(xRect, 15, 15);
 
 //  CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
 //  CGContextSetLineWidth(context, 1.0);
   CGContextSetStrokeColorWithColor(context,[UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000].CGColor);
-  CGContextSetLineWidth(context, 4.0);
+  CGContextSetLineWidth(context, 8.0);
   CGContextBeginPath(context);
 
   CGContextMoveToPoint(context, CGRectGetMinX(xRect), CGRectGetMinY(xRect));
@@ -173,16 +173,22 @@ static inline CGFloat ColumnWidthFromRect(CGRect rect) {
              column:(NSUInteger)column
             context:(CGContextRef)context {
   CGRect oRect = [self rectForSquareInRect:rect atRow:row column:column];
-  oRect = CGRectInset(oRect, 10, 10);
+  oRect = CGRectInset(oRect, 15, 15);
 
   CGContextSetStrokeColorWithColor(context,[UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000].CGColor);
-//  CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
-  CGContextSetLineWidth(context, 4.0);
+  CGContextSetLineWidth(context, 8.0);
   CGContextBeginPath(context);
-
   CGContextAddEllipseInRect(context, oRect);
-
   CGContextStrokePath(context);
+
+/*
+    CGContextSetFillColorWithColor(context,[UIColor colorWithRed:0.451 green:0.753 blue:0.341 alpha:1.000].CGColor);
+    CGContextBeginPath(context);
+    
+    CGContextAddEllipseInRect(context, oRect);
+    
+    CGContextFillPath(context);
+*/
 }
 
 // Returns the rect for the Tic-Tac-Toe square at the given row and column in a
@@ -234,7 +240,7 @@ static inline CGFloat ColumnWidthFromRect(CGRect rect) {
   }
 
   [[UIColor redColor] setStroke];
-  CGContextSetLineWidth(context, 4.0);
+  CGContextSetLineWidth(context, 8.0);
   CGContextBeginPath(context);
 
   CGContextMoveToPoint(context, startPoint.x, startPoint.y);
