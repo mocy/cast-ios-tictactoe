@@ -81,12 +81,12 @@ static const NSInteger kTagPlayAgain = 2;
       NSDictionaryOfVariableBindings(_ticTacToeView, _gameStatusLabel);
   NSMutableArray *constraints = [[NSMutableArray alloc] initWithCapacity:2];
   [constraints addObjectsFromArray:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"|-[_ticTacToeView]-|"
+     [NSLayoutConstraint constraintsWithVisualFormat:@"|-[_ticTacToeView(300)]-|"
                                              options:0
                                              metrics:nil
                                                views:viewsDictionary]];
   [constraints addObjectsFromArray:
-      [NSLayoutConstraint constraintsWithVisualFormat:@"|-[_gameStatusLabel]-|"
+      [NSLayoutConstraint constraintsWithVisualFormat:@"|-[_gameStatusLabel(300)]-|"
                                               options:0
                                               metrics:nil
                                                 views:viewsDictionary]];

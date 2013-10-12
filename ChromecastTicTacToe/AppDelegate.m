@@ -34,7 +34,7 @@ static NSString *const kUserDefaultsKeyUserName = @"kUserDefaultsKeyUserName";
     
         // Only valid on iOS 7+
         [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.451f green:0.753f blue:0.341f alpha:1.000f]];
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor colorWithWhite:1.0 alpha:0.8f]];
         
         
         // Change the font style of the title
