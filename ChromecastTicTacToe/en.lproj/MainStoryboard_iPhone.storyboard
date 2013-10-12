@@ -92,7 +92,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jD2-nn-Y9J">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="jD2-nn-Y9J">
                                 <rect key="frame" x="20" y="100" width="280" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -101,7 +101,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8m6-ld-oTt">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8m6-ld-oTt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -116,8 +116,10 @@
                         <color key="backgroundColor" red="0.96862751250000001" green="0.96862751250000001" blue="0.96862751250000001" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="8m6-ld-oTt" firstAttribute="leading" secondItem="d5u-tV-LwC" secondAttribute="leading" id="7bU-i6-JcS"/>
+                            <constraint firstItem="fHx-PR-qFT" firstAttribute="top" secondItem="jD2-nn-Y9J" secondAttribute="bottom" constant="418" id="T8M-7e-tgX"/>
                             <constraint firstAttribute="trailing" secondItem="8m6-ld-oTt" secondAttribute="trailing" id="Vat-Mb-ZhD"/>
                             <constraint firstAttribute="trailing" secondItem="jD2-nn-Y9J" secondAttribute="trailing" constant="20" symbolic="YES" id="dlv-Ek-4iv"/>
+                            <constraint firstItem="jD2-nn-Y9J" firstAttribute="top" secondItem="8m6-ld-oTt" secondAttribute="bottom" constant="36" id="u7M-Ny-Ebp"/>
                             <constraint firstItem="jD2-nn-Y9J" firstAttribute="leading" secondItem="d5u-tV-LwC" secondAttribute="leading" constant="20" symbolic="YES" id="waZ-jE-25j"/>
                         </constraints>
                     </view>
@@ -151,8 +153,8 @@
                                     <constraint firstAttribute="height" constant="300" id="du4-rt-Smz"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="New Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyG-Bu-Q2P">
-                                <rect key="frame" x="10" y="357" width="300" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyG-Bu-Q2P">
+                                <rect key="frame" x="10" y="350" width="300" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="bMD-Nf-T2J"/>
@@ -165,6 +167,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8yL-bO-cLY" firstAttribute="top" secondItem="22" secondAttribute="top" constant="44" id="O3s-iR-aGD"/>
+                            <constraint firstItem="VyG-Bu-Q2P" firstAttribute="top" secondItem="8yL-bO-cLY" secondAttribute="bottom" constant="6" id="UPK-RI-HdB"/>
                             <constraint firstAttribute="centerX" secondItem="8yL-bO-cLY" secondAttribute="centerX" id="ohN-cE-hVt"/>
                             <constraint firstAttribute="centerX" secondItem="VyG-Bu-Q2P" secondAttribute="centerX" id="v26-0Y-8vm"/>
                         </constraints>
