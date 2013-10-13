@@ -112,15 +112,14 @@ static const NSInteger kTagPlayAgain = 2;
 // Show a message indicating that the game has finished, with an option to
 // play again or leave.
 - (void)showGameOverMessage:(NSString *)message {
-  NSString *title = NSLocalizedString(@"Game over", nil);
   NSString *cancelButtonTitle = NSLocalizedString(@"Leave", nil);
   NSString *playAgainButtonTitle = NSLocalizedString(@"Play again", nil);
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                  message:message
-                                                 delegate:nil
-                                        cancelButtonTitle:cancelButtonTitle
-                                        otherButtonTitles:playAgainButtonTitle,
-                        nil];
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:message
+                                                    message:nil
+                                                   delegate:nil
+                                          cancelButtonTitle:cancelButtonTitle
+                                          otherButtonTitles:playAgainButtonTitle,
+                          nil];
   alert.tag = kTagPlayAgain;
   alert.delegate = self;
   [alert show];
@@ -318,9 +317,9 @@ static const NSInteger kTagPlayAgain = 2;
                                              atIndex:(NSUInteger)index];
       NSString *message;
       if (result == kResultYouWon) {
-        message = NSLocalizedString(@"A winner is you! Play again?", nil);
+        message = NSLocalizedString(@"You won!", nil);
       } else {
-        message = NSLocalizedString(@"You lost! Play again?", nil);
+        message = NSLocalizedString(@"You lost!", nil);
       }
       [self showGameOverMessage:message];
       self._gameStatusLabel.text = @"";
@@ -328,7 +327,7 @@ static const NSInteger kTagPlayAgain = 2;
     }
 
     case kResultDraw: {
-      NSString *message = NSLocalizedString(@"Nobody wins, again.", nil);
+      NSString *message = NSLocalizedString(@"It's a draw!", nil);
       [self showGameOverMessage:message];
       self._gameStatusLabel.text = @"";
       break;
