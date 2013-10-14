@@ -33,9 +33,9 @@ static NSString *const kUserDefaultsKeyUserName = @"kUserDefaultsKeyUserName";
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
     
         // Only valid on iOS 7+
-        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.451f green:0.753f blue:0.341f alpha:1.000f]];
-        [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.693f green:0.980f blue:0.588f alpha:1.000f]];
         
+        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.339f green:0.740f blue:0.326f alpha:1.000f]];
+        [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.729f green:1.000f blue:0.720f alpha:1.000f]];
         
         // Change the font style of the title
          [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:

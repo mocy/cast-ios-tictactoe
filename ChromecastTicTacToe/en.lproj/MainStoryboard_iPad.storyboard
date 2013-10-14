@@ -27,7 +27,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="nbc-Sb-pgi">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.82813411950000004" green="0.94319468740000001" blue="0.82127004859999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.91517710689999998" green="0.93853783609999997" blue="0.91379135850000004" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DeviceCell" textLabel="QJR-6Z-h2A" detailTextLabel="vK3-sc-2wm" style="IBUITableViewCellStyleValue1" id="NZY-8l-v0h">
                                 <rect key="frame" x="0.0" y="55" width="768" height="44"/>
@@ -113,7 +113,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.82813411950000004" green="0.94319468740000001" blue="0.82127004859999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.91517710689999998" green="0.93853783609999997" blue="0.91379135850000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ph1-jF-rq1" firstAttribute="top" secondItem="de2-U6-F7Y" secondAttribute="top" id="A6A-h0-CAf"/>
                             <constraint firstItem="GrR-rd-NBK" firstAttribute="centerX" secondItem="ph1-jF-rq1" secondAttribute="centerX" id="G15-vf-PTq"/>
@@ -160,11 +160,11 @@
                                     <constraint firstAttribute="width" constant="300" id="t9m-Mr-rxn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" red="0.45098039220000002" green="0.75294117650000003" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.28678226470000001" green="0.70256608720000002" blue="0.25791263580000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.82813411950000004" green="0.94319468740000001" blue="0.82127004859999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.91517710689999998" green="0.93853783609999997" blue="0.91379135850000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xHt-bV-O3V" firstAttribute="top" secondItem="Dx1-gW-vJJ" secondAttribute="bottom" constant="44" id="9lb-C6-16M"/>
                             <constraint firstItem="rzl-4w-kmx" firstAttribute="top" secondItem="xHt-bV-O3V" secondAttribute="bottom" constant="26" id="Cpf-U4-qYt"/>
@@ -183,6 +183,7 @@
             <point key="canvasLocation" x="2062" y="544"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.28678226470000001" green="0.70256608720000002" blue="0.25791263580000001" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>
         <simulatedOrientationMetrics key="orientation"/>
