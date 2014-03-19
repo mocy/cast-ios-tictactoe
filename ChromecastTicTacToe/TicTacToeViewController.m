@@ -60,17 +60,13 @@ static const NSInteger kTagPlayAgain = 2;
 
 @implementation TicTacToeViewController
 
-// Add all of the custom subviews and layout constraints to the empty view
-// provided in the nib.
-- (void)awakeFromNib {
-  _isGameInProgress = NO;
-}
 
 // Start the remote application session when the view appears.
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   self._ticTacToeView.delegate = self;
   _boardState = [[TicTacToeBoardState alloc] init];
+  _isGameInProgress = NO;
   self._ticTacToeView.board = _boardState;
   [self startSession];
 }
@@ -97,12 +93,8 @@ static const NSInteger kTagPlayAgain = 2;
   NSAssert(_session, @"Ending non-existent session");
   [_messageStream leaveGame];
   [_session endSession];
-  _session = nil;
   [_channel detachAllMessageStreams];
   [_channel disconnect];
-  _channel = nil;
-    // TODO: fix the zombie ref
-//  _messageStream = nil;
 }
 
 - (BOOL)isPlayersTurn {
@@ -234,9 +226,9 @@ static const NSInteger kTagPlayAgain = 2;
 // Show an error indicating that the game could not be started.
 - (void)applicationSessionDidFailToStartWithError:
     (GCKApplicationSessionError *)error {
-  NSLog(@"castApplicationSessionDidFailToStartWithError: %@",
+  
+    NSLog(@"castApplicationSessionDidFailToStartWithError: %@",
         [error localizedDescription]);
-  _messageStream = nil;
   NSString *message = NSLocalizedString(@"Could not start game.", nil);
   [self showErrorMessage:message popViewControllerOnOK:YES];
 }
@@ -245,7 +237,6 @@ static const NSInteger kTagPlayAgain = 2;
 - (void)applicationSessionDidEndWithError:
     (GCKApplicationSessionError *)error {
   NSLog(@"castApplicationSessionDidEndWithError: %@", error);
-  _messageStream = nil;
   if (error) {
     NSString *message = NSLocalizedString(@"Lost connection.", nil);
     [self showErrorMessage:message popViewControllerOnOK:YES];
